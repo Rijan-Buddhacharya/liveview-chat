@@ -15,7 +15,7 @@ defmodule ChatWeb.ChatLive do
        messages: Message.list_messages(),
        current_message: "",
        username: "user#{:rand.uniform(1000)}",
-       user_email: "user@example.com" # Change this to get the actual user email if needed
+       user_email: "user@example.com"
      )}
   end
 
@@ -26,7 +26,7 @@ defmodule ChatWeb.ChatLive do
         content: message,
         username: socket.assigns.username,
         email: socket.assigns.user_email,
-        inserted_at: NaiveDateTime.utc_now() # Changed from :timestamp to :inserted_at
+        inserted_at: NaiveDateTime.utc_now()
       }
 
       case Message.create_message(message_attrs) do
